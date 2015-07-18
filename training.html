@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+        <meta charset="UTF-8">
+        <title>走れハチ公！</title>
+        <style>
+            body {
+                background-color: green;
+            }
+            h1 {
+                color: yellow;
+            }
+            p {
+                color: white;
+            }
+            #hachi {
+                position: absolute;
+                left: 100px;
+                top: 100px;
+            }
+        </style>
+        <div id="hachi">
+            <img id="hachi_img" src="hachi.png" alt="hachiko" />
+        </div>
+        <h1>Hachiko Training</h1>
+        <p>Running anytime</p>
+        <script>
+            var vx = 3;
+            function move() {
+                var elem = document.getElementById('hachi');
+                var x = elem.offsetLeft;
+                var w = elem.offsetWidth;
+                if(x + vx < 0 || window.innerWidth < x + w + vx) {
+                    vx *= -1;
+                }
+                elem.style.left = x + vx + 'px';
+            }
+        </script>
+</html>
